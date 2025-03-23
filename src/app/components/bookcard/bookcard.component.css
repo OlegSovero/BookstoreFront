@@ -1,0 +1,16 @@
+.card {
+    position: relative; /* Necesario para posicionar el botón en el lugar correcto */
+  }
+  
+  .add-to-cart-btn {
+    position: absolute;
+    bottom: 10px; /* Posiciona el botón en la parte inferior de la tarjeta */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0; /* El botón está oculto por defecto */
+    transition: opacity 0.3s ease; /* Transición suave para mostrar el botón */
+  }
+  
+  .card:hover .add-to-cart-btn {
+    opacity: 1; /* El botón se muestra cuando el mouse está sobre el card */
+  }
