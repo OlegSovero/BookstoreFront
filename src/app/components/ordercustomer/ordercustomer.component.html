@@ -1,5 +1,3 @@
-
-<span>prueba order customer</span>
 <form (ngSubmit)="onSubmit()">
     <div class="form-row">
       <div class="form-group col-12 col-lg-6">
@@ -40,7 +38,6 @@
         <input type="text" class="form-control" id="phone" [(ngModel)]="customer.phone" name="phone">
       </div>
     </div>
-  
-    <button type="submit" class="btn btn-primary" [disabled]="!isFormValid()">Proceder con la compra</button>
+    <button type="submit" class="btn btn-primary" [disabled]="!isFormValid()">Validar Datos</button>
   </form>
   

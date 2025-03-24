@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 //import { PaymentProcessingModalComponent } from './payment-processing-modal.component';
 import { FormsModule } from '@angular/forms';
+import { CartFormService } from '../services/cartform.service';
 
 @Component({
   selector: 'app-ordercustomer',
@@ -20,32 +21,22 @@ export class OrdercustomerComponent {
     phone: ''
   };
 
-  constructor(private router: Router) {}
+  constructor(private cartFormService: CartFormService, private router: Router) {}
 
   onSubmit() {
-    // Se pueden agregar más validaciones aquí
-    if (this.isFormValid()) {
-      const orderData = {
-        doc_type: this.customer.docType,
-        doc_number: this.customer.docNumber,
-        first_name: this.customer.firstName,
-        last_name: this.customer.lastName,
-        phone: this.customer.phone,
-        email: this.customer.email,
-        total: 150.75, // Puede venir del servicio de carrito
-        items: [
-          { id_book: 1, quantity: 2, detail_price: 50.25 },
-          { id_book: 2, quantity: 1, detail_price: 50.25 }
-        ]
-      };
+    // Guardar los datos del formulario en el CartFormService
+    console.log(this.customer)
+    this.cartFormService.setCustomerData(this.customer);
 
-      // Redirige al checkout pasando los datos de la orden (se puede hacer con un servicio o queryParams)
-      this.router.navigate(['/checkout'], { queryParams: orderData });
-    }
+    this.cartFormService.validateCustomerData(this.customer);
+    
+    // Redirigir al CheckoutComponent
+    this.router.navigate(['/checkout']);
   }
 
   isFormValid() {
-    // Aquí validas los campos obligatorios
+    // Validar los campos obligatorios
+    console.log(this.customer)
     return this.customer.firstName && this.customer.lastName && this.customer.docNumber;
   }
 }
