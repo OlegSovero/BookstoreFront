@@ -1,0 +1,15 @@
+/* Asegúrate de que los componentes ocupen el 100% del ancho en pantallas pequeñas */
+@media (max-width: 768px) {
+    .container {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+  
+  /* Ajustes adicionales para que el checkout tenga un diseño adecuado en pantallas grandes */
+  @media (min-width: 992px) {
+    .row {
+      display: flex;
+      justify-content: space-between;
+    }
+  }

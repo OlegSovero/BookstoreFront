@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BookService } from '../services/book.service';
 import { CommonModule } from '@angular/common';
-import { BookcardComponent } from "../bookcard/bookcard.component"; // Asegúrate de importar CommonModule
+import { BookcardComponent } from "../bookcard/bookcard.component"; 
 
 interface Book {
   id_book: number;

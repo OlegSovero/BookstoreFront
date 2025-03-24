@@ -1,0 +1,17 @@
+<p>itemdetailcard works!</p>
+<div class="card item-detail-card">
+    <div class="card-body">
+      <div class="row">
+        <!-- Imagen pequeña -->
+        <div class="col-3">
+          <img src="https://www.pngfind.com/pngs/m/216-2160526_jpg-royalty-free-library-3-books-clipart-book.png" alt="{{ item.name }}" class="img-thumbnail" width="52" height="82">
+        </div>
+        <!-- Detalles del producto -->
+        <div class="col-9">
+          <h6 class="card-title">{{ item.name }}</h6>
+          <p class="card-text">Cantidad: {{ item.quantity }}</p>
+          <p class="card-text">Precio: S/. {{ item.precio }}</p>
+        </div>
+      </div>
+    </div>
+  </div>

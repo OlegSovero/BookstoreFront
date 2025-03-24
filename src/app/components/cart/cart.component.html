@@ -1,0 +1,24 @@
+<span>prueba carrito</span>
+<div class="cart-detail">
+  <div class="cart-header">
+    <button class="btn btn-secondary" (click)="closeCart()">Cerrar</button>
+  </div>
+  <ul class="list-group">
+    <li *ngFor="let item of cartItems" class="list-group-item">
+      {{ item.name }} - S/. {{ item.precio }}
+      <button
+        class="btn btn-danger btn-sm float-right"
+        (click)="removeFromCart(item)"
+      >
+        Eliminar
+      </button>
+    </li>
+  </ul>
+  <a></a>
+  <div class="cart-footer">
+    <p>Total: S/. {{ total }}</p>
+
+    <button class="btn btn-success" [routerLink]="'/checkout'" [queryParams]="{ total: total, cartItems: cartItemsAsString }">Ir al Checkout</button>
+
+  </div>
+</div>

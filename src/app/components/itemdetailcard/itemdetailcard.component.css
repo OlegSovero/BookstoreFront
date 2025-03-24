@@ -1,0 +1,23 @@
+.item-detail-card {
+    margin-bottom: 10px;  /* Espacio entre los cards */
+    border: 1px solid #ddd;  /* Borde ligero para los cards */
+    border-radius: 5px;  /* Bordes redondeados */
+  }
+  
+  .item-detail-card .card-body {
+    display: flex;
+    align-items: center;  /* Alineación vertical */
+    padding: 10px;
+  }
+  
+  .item-detail-card .card-title {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .item-detail-card .card-text {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+  }
+  
